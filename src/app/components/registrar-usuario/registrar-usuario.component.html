@@ -1,0 +1,49 @@
+<div class="wrapper">
+    <div class="container d-flex align-items-center justify-content-center">
+      <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+          <div class="card border-primary">
+            <div class="card-header bg-primary text-white">
+              Registro
+            </div>
+            <div class="card-body bg-semi-transparent">
+              <form (ngSubmit)="registrar()" [formGroup]="registrarUsuario">
+                <div class="form-group mb-3">
+                  <input type="text" class="form-control" id="nombre" placeholder="Nombre" formControlName="Nombre">
+                </div>
+                <div class="form-group mb-3">
+                  <input type="text" class="form-control" id="apellido_paterno" placeholder="Apellido paterno" formControlName="ApellidoPaterno">
+                </div>
+                <div class="form-group mb-3">
+                  <input type="text" class="form-control" id="apellido_materno" placeholder="Apellido materno" formControlName="ApellidoMaterno">
+                </div>
+                <div class="form-group mb-3">
+                    <input type="text" class="form-control" id="correo" placeholder="Correo Electronico" formControlName="Correo">
+                  </div>
+                <div class="form-group mb-3">
+                  <input type="text" class="form-control" id="direccion" placeholder="Dirección" formControlName="Direccion">
+                </div>
+                <div class="form-group mb-3">
+                  <label for="fecha_nacimiento">Fecha de nacimiento</label>
+                  <input type="date" class="form-control" id="fecha_nacimiento" formControlName="FechaNacimiento">
+                </div>
+                <div class="form-group mb-3">
+                  <input type="password" class="form-control" id="contraseña" placeholder="Contraseña" formControlName="Contrasena">
+                </div>
+                <div class="form-group mb-3">
+                  <input type="password" class="form-control" id="confirmar_contraseña" placeholder="Confirmar contraseña" formControlName="Confirmarcontrasena">
+                </div>
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary mt-3">Registrar</button>
+                  </div>
+              </form>
+              <div class="mt-3">
+                <p>¿Ya tienes cuenta?</p>
+                <button class="btn btn-primary" routerLink="/login">Ingresar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

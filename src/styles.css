@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+html,body {
+    height: 100%;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/004/697/688/original/curve-light-blue-background-abstract-free-vector.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.wrapper {
+    height: 10%;
+}
+.row{
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 15px;
+    text-align: center;
+}
