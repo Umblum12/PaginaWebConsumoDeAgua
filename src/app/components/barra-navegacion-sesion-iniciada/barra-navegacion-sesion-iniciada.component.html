@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
+  <div class="container-fluid ">
+    <a class="navbar-brand" href="#">
+      <img src="../../assets/imagenes/logo.png" alt="" width="100" height="85">
+    </a>
+    <a class="navbar-brand" href="#">Scapes</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+      aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav my-2 me-auto my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" [routerLinkActive]="['active-link']"
+            [routerLink]="['/dashboard']">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" [routerLinkActive]="['active-link']"
+            [routerLink]="['/valvula']">Valvula</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#" tabindex="-1" aria-disabled="true" [routerLinkActive]="['active-link']"
+            [routerLink]="['/Historial']">Historial</a>
+        </li>
+        <div *ngIf="admin == 'true' ;else elseBlock">
+          <li class="nav-item">
+            <a class="nav-link active" href="#" tabindex="-1" aria-disabled="true" [routerLinkActive]="['active-link']"
+              [routerLink]="['/Historial-admin']">Historial</a>
+          </li>
+        </div>
+        <ng-template #elseBlock></ng-template>
+        <li class="nav-item">
+          <a class="nav-link active" href="#" tabindex="-1" aria-disabled="true" [routerLinkActive]="['active-link']"
+            [routerLink]="['/Grafica-sensor-flujo']">Grafica Sensor de agua</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#" tabindex="-1" aria-disabled="true" [routerLinkActive]="['active-link']"
+            [routerLink]="['/Grafica-valvula']">Grafica valvula eléctrica</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-3" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success me-3" type="submit">Search</button>
+      </form>
+      <ul class="navbar-nav me-5">
+        <li class="nav-item dropdown ml-auto me-5">
+          <a class="nav-link dropdown-toggle btn btn-info" type="button" href="#" id="navbarScrollingDropdown"
+            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Perfil <span class="icon-user"></span>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+            <li><a class="dropdown-item" href="/Configuracion"><span class="icon-cog"></span> Configuracion</a></li>
+            <li><a class="dropdown-item" href="#" (clik)="logout()"><span class="icon-switch"></span> Cerrar Sesión</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

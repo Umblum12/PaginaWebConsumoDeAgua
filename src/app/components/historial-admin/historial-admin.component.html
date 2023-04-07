@@ -1,0 +1,102 @@
+<app-barra-navegacion-sesion-iniciada></app-barra-navegacion-sesion-iniciada>
+<div class="wrapper">
+    <div style="text-align: center;">
+        <form (ngSubmit)="registerUser(RegisterForm.value)" #RegisterForm="ngForm">
+            <h2>
+                <font color="white">Historial</font>
+            </h2>
+            <div class="form-group">
+                <label for="Estado">Estado</label>
+                <input type="text" class="form-control" ngModel id="Estado" name="Estado" placeholder="Estado">
+            </div>
+            <div class="form-group">
+                <label for="Flujo">Flujo</label>
+                <input type="text" class="form-control" ngModel id="Flujo" name="Flujo" placeholder="Flujo">
+            </div>
+            <div class="form-group">
+                <label for="Nombre">Nombre</label>
+                <input type="text" class="form-control" ngModel id="Nombre" name="nombre" placeholder="Nombre">
+            </div>
+            <div class="form-group">
+                <label for="Fecha">Fecha</label>
+                <input type="text" class="form-control" ngModel id="Fecha" name="Fecha" placeholder="Fecha">
+            </div>
+            <input type="submit" id="saveData" name="signup_submit" value="Registrar-historial"
+                class="btn btn-success mt-3" placeholder="font:color=white; Crear nuevo empleado" />
+            <table class="table">
+                <thead>
+
+                    <tr>
+                        <th>
+                            <font color="white">Estado</font>
+                        </th>
+                        <th>
+                            <font color="white">Flujo</font>
+                        </th>
+                        <th>
+                            <font color="white">Nombre</font>
+                        </th>
+                        <th>
+                            <font color="white">Fecha</font>
+                        </th>
+                        <th>
+                            <font color="white">Opciones</font>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let Historial of usuarios" style="background-color: rgb(255, 255, 255);">
+                        <td>{{Historial.Estado}}</td>
+                        <td>{{Historial.Flujo}}</td>
+                        <td>{{Historial.Nombre}}</td>
+                        <td>{{Historial.Fecha}}</td>
+                        <td>
+                            <button type="button" (click)="modifyUser(RegisterForm.value)"
+                                class="btn btn-primary">Editar</button>
+                            <button type="button" (click)="deleteUser(Historial.id)"
+                                class="btn btn-danger">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <ng-template #content let-modal>
+                <div class="modal-header">
+                    <h4 class="modal-title" id="modal-basic-title">
+                        <font color="white">Estudiante create/update</font>
+                    </h4>
+                    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <form>
+                                <div class="form-group">
+                                    <label>
+                                        <font color="white">Id</font>
+                                    </label>
+                                    <input type="number" formControlName="id" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>
+                                        <font color="white">Nombre</font>
+                                    </label>
+                                    <input type="text" formControlName="nombre" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>A<font color="white">pellido</font></label>
+                                    <input type="text" formControlName="apellido" class="form-control">
+                                </div>
+                            </form>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-dark">Guardar</button>
+                    <button type="button" class="btn btn-outline-dark">Actualizar</button>
+                </div>
+            </ng-template>
+        </form>
+    </div>
+</div>

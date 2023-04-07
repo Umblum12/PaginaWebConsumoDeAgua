@@ -1,0 +1,17 @@
+.Caja-trasera{
+    margin-left: 100px;
+    margin-right: 100px;
+    height: auto;
+    padding-bottom: 60px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 217, 255, 0.1.7);
+}
+.table{
+ width: 80%;
+ margin-left: 130px;
+ margin-top: 20px;
+}
+h2 {
+    color: white;
+    padding-top: 20px;
+}

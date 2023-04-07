@@ -1,0 +1,37 @@
+<app-barra-navegacion-sesion-iniciada></app-barra-navegacion-sesion-iniciada>
+<div class="wrapper">
+    <div class="container d-flex align-items-center justify-content-center">
+        <!-- El main -->
+        <main>
+            <!-- Contenedor de todo -->
+            <div class="contenedor__todo">
+                <!-- Contenedor caja trasera -->
+                <div class="caja__trasera">
+                    <!-- Contenedor caja trasera Inicio de sesión -->
+                    <div class="caja__trasera-login">
+                        <div class="contenedor__login-register">
+                            <div>
+                                <!--Login-->
+                                <div class="formulario__login">
+                                    <h2>Grafica sensor de flujo</h2>
+                                    <div class="toolbar" role="banner">
+                                        <div class="spacer"></div>
+                                    </div>
+                                    <div class="content" role="main">
+                                        <label style="font-size: xx-large">DATOS DE MOVIMIENTO </label>
+                                        <label *ngFor="let Litros of Consumo"
+                                            style="font-size: xx-large; color: blue; font-weight: bold">
+                                            {{Litros.flujo}}
+                                        </label> <label style="font-size: xx-large; color: blue;"> Litros</label>
+                                        <canvas #chart width="400" height="200"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Formulario de Login y registro-->
+            </div>
+        </main>
+    </div>
+</div>
